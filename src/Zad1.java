@@ -41,9 +41,9 @@ public class Zad1 {
             array[0] = generateNumber(valueMin, valueMax);
         } while (isPrime(array[0]));
         for (int i = 1; i < array.length; i++) {
-            if (!isPrime(array[i] + array[i - 1])) {
+            do {
                 array[i] = generateNumber(valueMin, valueMax);
-            }
+            } while (isPrime(array[i] + array[i - 1]));
         }
         System.out.println(Arrays.toString(array));
     }
