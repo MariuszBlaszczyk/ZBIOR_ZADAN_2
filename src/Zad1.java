@@ -40,10 +40,7 @@ public class Zad1 {
         do {
             array[0] = generateNumber(valueMin, valueMax);
         } while (isPrime(array[0]));
-        do {
-            array[1] = generateNumber(valueMin, valueMax);
-        } while (isPrime(array[0] + array[1]));
-        for (int i = 2; i < array.length; i++) {
+        for (int i = 1; i < array.length; i++) {
             if (!isPrime(array[i] + array[i - 1])) {
                 array[i] = generateNumber(valueMin, valueMax);
             }
