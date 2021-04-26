@@ -31,19 +31,16 @@ public class Zad4 {
         return array;
     }
 
-
     static int[] generateNewArray(int[] array) {
         if (array == null) {
             throw new IllegalArgumentException("Array is null");
         }
-        int[] newArray = Arrays.copyOf(array, array.length);
-        int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum = +array[i];
-        }
+        int[] newArray = new int[array.length];
+        newArray[0] = 0;
+        int sum = array[0];
         for (int i = 1; i < newArray.length; i++) {
-            array[0] = 0;
-            array[i] = sum;
+            sum += array[i];
+            newArray[i] = sum;
         }
         return newArray;
     }
@@ -60,5 +57,7 @@ public class Zad4 {
 
         int[] array2 = generateNewArray(array1);
         System.out.println("Array2: " + Arrays.toString(array2));
+
+
     }
 }
